@@ -1,151 +1,157 @@
-// ITERATION 1
-
-// Suspects Array
-
+const suspectsArray = [];
 const suspectsArray = [
   {
-    firstName: 'Jesus',
-    lastName: 'Mallo',
-    occupation: 'Estudiante'
-    
+    firstName: 'Jacob',
+    lastName: 'Green',
+    occupation: 'Entrepreneur',
+    age: 45,
+    description: 'He has a lot of connections',
+    image:
+      'https://pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg',
+    color: 'green'
   },
   {
-    firstName: 'Sandra'
-    lastName: 'Bosk'
-    occupation: 'jefa'
+    firstName: 'Doctor',
+    lastName: 'Orchid',
+    occupation: 'Scientist',
+    age: 26,
+    description: 'PhD in plant toxicology. Adopted daughter of Mr. Boddy',
+    image: 'http://www.radiotimes.com/uploads/images/Original/111967.jpg',
+    color: 'white'
   },
   {
-    firstName: 'Curro'
-    lastName: 'Jimenez'
-    occupation: 'profe'
+    firstName: 'Victor',
+    lastName: 'Plum',
+    occupation: 'Designer',
+    age: 22,
+    description: 'Billionaire video game designer',
+    image:
+      'https://66.media.tumblr.com/ee7155882178f73b3781603f0908617c/tumblr_phhxc7EhPJ1w5fh03_540.jpg',
+    color: 'purple'
   },
   {
-    firstName: 'Salava'
-    lastName: 'Garcia'
-    occupation: 'asistente'
+    firstName: 'Kasandra',
+    lastName: 'Scarlet',
+    occupation: 'Actor',
+    age: 31,
+    description: 'She is an A-list movie star with a dark past',
+    image: 'https://www.radiotimes.com/uploads/images/Original/111967.jpg',
+    color: 'red'
   },
   {
-    firstName: 'Alex'
-    lastName: 'Escofet'
-    occupation: 'segundo asistente'
+    firstName: 'Eleanor',
+    lastName: 'Peacock',
+    occupation: 'Socialité',
+    age: 36,
+    description:
+      'She is from a wealthy family and uses her status and money to earn popularity',
+    image: 'https://metrouk2.files.wordpress.com/2016/07/mrs-peacock.jpg',
+    color: 'blue'
   },
- 
+  {
+    firstName: 'Jack',
+    lastName: 'Mustard',
+    occupation: 'Retired Football player',
+    age: 62,
+    description:
+      'He is a former football player who tries to get by on his former glory',
+    image:
+      'https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/07/04/08/unspecified-3.jpg',
+    color: 'yellow'
+  }
 
+  // Rooms Array
 ];
-kdkdkdk
 
-sfdasfdfd
-
+const roomsArray = [];
 // Rooms Array
 
 const roomsArray = [
-  {
-    room1: 'comedor'
-  },
-  {
-    room2: 'cocina'
-  },
-  {
-    room3: 'lavabo'
-  },
-  {
-    room4: 'sala de billar'
-  },
-  {
-    room5: 'dormitorio grande'
-  },
-  {
-    room6: 'sala de juegos'
-  },
-  {
-    room7: 'habitación de invitados'
-  },
-  {
-    room8: 'habitación 8'
-  },
-
-  {
-    room9: 'habitación 9'
-  },
-
-  {
-    room10: 'habitación 10'
-  },
-
-
-  {
-    room11: 'habitación 11'
-  },
-
-
-  {
-    room12: 'habitación 12'
-  },
-
-
-  {
-    room13: 'habitación 13'
-  },
-
-
-  {
-    room14: 'habitación 14'
-  },
-
-
-  {
-    room15: 'habitación 15'
-  },
-
-
-
+  { name: 'Dining Room' },
+  { name: 'Conservatory' },
+  { name: 'Kitchen' },
+  { name: 'Study' },
+  { name: 'Library' },
+  { name: 'Billiard Room' },
+  { name: 'Lounge' },
+  { name: 'Ballroom' },
+  { name: 'Hall' },
+  { name: 'Spa' },
+  { name: 'Living Room' },
+  { name: 'Observatory' },
+  { name: 'Theater' },
+  { name: 'Guest House' },
+  { name: 'Patio' }
 ];
-
 // Weapons Array
 
+const weaponsArray = [];
 const weaponsArray = [
   {
-    name: 'pistol'
-    weigth: '20'
+    name: 'rope',
+    weight: 10
   },
-
   {
-    name: 'pistol'
-    weigth: '20'
+    name: 'knife',
+    weight: 8
   },
-
   {
-    name: 'pistol'
-    weigth: '20'
+    name: 'candlestick',
+    weight: 2
   },
-
   {
-    name: 'pistol'
-    weigth: '20'
+    name: 'dumbbell',
+    weight: 30
   },
-
   {
-    name: 'pistol'
-    weigth: '20'
+    name: 'poison',
+    weight: 2
   },
-
-
+  {
+    name: 'axe',
+    weight: 15
+  },
+  {
+    name: 'bat',
+    weight: 13
+  },
+  {
+    name: 'trophy',
+    weight: 25
+  },
+  {
+    name: 'pistol',
+    weight: 20
+  }
 ];
-
 
 // ITERATION 2
 
 function selectRandom() {}
+function selectRandom(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
 
 function pickMystery() {}
+function pickMystery() {
+  let mistery = {
+    suspect: {},
+    weapon: {},
+    room: {}
+  };
+  mistery.weapon = selectRandom(weaponsArray);
+  mistery.suspect = selectRandom(suspectsArray);
+  mistery.room = selectRandom(roomsArray);
 
+  return mistery;
+}
 
 // ITERATION 3
 
 function revealMystery() {}
-
-
-
+function revealMystery(envelope) {
+  return `${envelope.suspect.firstName} ${envelope.suspect.lastName} killed Mr. Boddy using the ${envelope.weapon.name} in the ${envelope.room.name}!`;
+}
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
 if (typeof module !== 'undefined') {
